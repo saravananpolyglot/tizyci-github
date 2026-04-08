@@ -1,0 +1,54 @@
+name: 'Runner Metrics'
+description: 'Lightweight CI runner metrics collection with self-contained HTML report. Stop is automatic — just add the action once.'
+author: 'Vizio'
+
+branding:
+  icon: 'activity'
+  color: 'blue'
+
+inputs:
+  theme:
+    description: 'Report theme: light or dark'
+    required: false
+    default: 'dark'
+  upload-artifact:
+    description: 'Upload report as GitHub Actions artifact'
+    required: false
+    default: 'true'
+  artifact-name:
+    description: 'Name for the uploaded artifact'
+    required: false
+    default: 'tizyci-metrics-report'
+  output:
+    description: 'Output report file path'
+    required: false
+    default: 'tizyci-metrics-report.html'
+  github-token:
+    description: 'GitHub token for step detection via API (auto-detected)'
+    required: false
+    default: ${{ github.token }}
+  token:
+    description: 'TizyCI agent token for runner registration and reporting (required)'
+    required: true
+  api-url:
+    description: 'TizyCI API base URL'
+    required: false
+    default: 'https://api.tizycloud.com'
+  gateway-url:
+    description: 'TizyCI WebSocket gateway URL'
+    required: false
+    default: 'wss://wss.tizycloud.com:8443'
+  hold-on-failure:
+    description: 'Hold execution in post step if any previous step failed (useful for debugging)'
+    required: false
+    default: 'false'
+  hold-timeout:
+    description: 'Maximum time to hold execution on failure (e.g. 10m, 30m, 1h)'
+    required: false
+    default: '30m'
+
+runs:
+  using: 'node24'
+  main: 'dist/main/index.js'
+  post: 'dist/post/index.js'
+  post-if: 'always()'
