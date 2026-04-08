@@ -48,7 +48,7 @@ jobs:
 | `output` | Output report file path | No | `tizyci-metrics-report.html` |
 | `upload-artifact` | Upload report as Actions artifact | No | `true` |
 | `artifact-name` | Name for the uploaded artifact | No | `tizyci-metrics-report` |
-| `github-token` | GitHub token for step detection | No | `${{ github.token }}` |
+| `github-token` | GitHub token for step detection | No | auto-detected |
 | `hold-on-failure` | Hold execution on failure for debugging | No | `false` |
 | `hold-timeout` | Max hold time on failure (e.g. `10m`, `30m`, `1h`) | No | `30m` |
 
