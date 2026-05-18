@@ -43,7 +43,7 @@ jobs:
 |-------|-------------|----------|---------|
 | `token` | TizyCI agent token for runner registration | **Yes** | — |
 | `api-url` | TizyCI API base URL | No | `https://api.tizycloud.com` |
-| `gateway-url` | TizyCI WebSocket gateway URL | No | `wss://wss.tizycloud.com:8443` |
+| `gateway-url` | TizyCI WebSocket gateway URL | No | `wss://wss.tizycloud.com` |
 | `theme` | Report theme: `light` or `dark` | No | `dark` |
 | `output` | Output report file path | No | `tizyci-metrics-report.html` |
 | `upload-artifact` | Upload report as Actions artifact | No | `true` |

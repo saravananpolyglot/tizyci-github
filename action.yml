@@ -37,7 +37,7 @@ inputs:
   gateway-url:
     description: 'TizyCI WebSocket gateway URL'
     required: false
-    default: 'wss://wss.tizycloud.com:8443'
+    default: 'wss://wss.tizycloud.com'
   hold-on-failure:
     description: 'Hold execution in post step if any previous step failed (useful for debugging)'
     required: false
